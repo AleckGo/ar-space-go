@@ -19,6 +19,9 @@ jobs:
       packages: write
 
     steps:
+      - name: Convert repository owner to lowercase
+        run: echo "OWNER_LC=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_ENV
+        
       - name: Checkout repository
         uses: actions/checkout@v4
 
